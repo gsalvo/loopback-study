@@ -15,14 +15,18 @@ import {
   put,
   del,
   requestBody,
+  HttpErrors,
 } from '@loopback/rest';
 import {Todo} from '../models';
 import {TodoRepository} from '../repositories';
+import {Geocoder} from '../services';
+import {inject} from '@loopback/core';
 
 export class TodoController {
   constructor(
     @repository(TodoRepository)
     public todoRepository: TodoRepository,
+    @inject('services.Geocoder') protected geoService: Geocoder,
   ) {}
 
   @post('/todos', {
@@ -46,6 +50,15 @@ export class TodoController {
     })
     todo: Omit<Todo, 'id'>,
   ): Promise<Todo> {
+    if (todo.remindAtAddress) {
+      console.log('identify remindAtAddress element');
+      const geo = await this.geoService.geocode(todo.remindAtAddress);
+      console.log(`geo obtained: ${JSON.stringify(geo)}`);
+      if (!geo[0]) {
+        throw new HttpErrors.BadRequest(`Address not fount: ${todo.remindAtAddress}`);
+      }
+      todo.remindAtGeo = `${geo[0].y},${geo[0].x}`;
+    }
     return this.todoRepository.create(todo);
   }
 
