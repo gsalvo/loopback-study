@@ -1,6 +1,9 @@
 {
   "ids": {
-    "Todo": 9
+    "Todo": 9,
+    "User": 2,
+    "UserCredentials": 2,
+    "TodoList": 4
   },
   "models": {
     "Todo": {
@@ -12,6 +15,17 @@
       "6": "{\"title\":\"Loopback study\",\"desc\":\"I need study loopback\",\"isComplete\":false,\"remindAtAddress\":\"4600 Silver Hill Rd, Washington, DC 20233\",\"remindAtGeo\":\"38.845985,-76.92744\",\"id\":6}",
       "7": "{\"title\":\"Loopback study\",\"desc\":\"I need study loopback\",\"isComplete\":false,\"remindAtAddress\":\"4600 Silver Hill Rd, Washington, DC 20233\",\"remindAtGeo\":\"undefined,undefined\",\"id\":7}",
       "8": "{\"title\":\"Loopback study\",\"desc\":\"I need study loopback\",\"isComplete\":false,\"remindAtAddress\":\"4600 Silver Hill Rd, Washington, DC 20233\",\"remindAtGeo\":\"38.845985,-76.92744\",\"id\":8}"
+    },
+    "User": {
+      "ce95fc05-bad1-4ba8-9743-c20ac42f4361": "{\"id\":\"ce95fc05-bad1-4ba8-9743-c20ac42f4361\",\"username\":\"gsalvo\",\"email\":\"gsalvo@vasal.cl\",\"emailVerified\":false}"
+    },
+    "UserCredentials": {
+      "e98edfe1-620a-451f-bdf2-eb4b905e467f": "{\"id\":\"e98edfe1-620a-451f-bdf2-eb4b905e467f\",\"password\":\"$2a$10$68z17g9j.eLJba54lhSlduPjDATIdrpnZZDAWEmRLGXxs2TEKiZ2G\",\"userId\":\"ce95fc05-bad1-4ba8-9743-c20ac42f4361\"}"
+    },
+    "TodoList": {
+      "1": "{\"title\":\"Mi lista\",\"color\":\"red\",\"id\":1}",
+      "2": "{\"title\":\"string\",\"color\":\"string\",\"id\":2}",
+      "3": "{\"title\":\"string\",\"color\":\"string\",\"id\":3}"
     }
   }
 }

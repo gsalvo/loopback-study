@@ -21,7 +21,9 @@ import {Todo} from '../models';
 import {TodoRepository} from '../repositories';
 import {Geocoder} from '../services';
 import {inject} from '@loopback/core';
+import {authenticate} from '@loopback/authentication';
 
+//@authenticate('jwt')
 export class TodoController {
   constructor(
     @repository(TodoRepository)
